@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h3>Photo <span>Gallery Of ICT</span></h3>
+        </div>
+
+        <div class="box">
+            <div class="dream">
+                <div class="photo"><img src="1.jpeg" alt="Mountain View"><span class="caption">WC 2011</span></div>
+                <div class="photo"><img src="2.jpeg" alt="Mountain View"><span class="caption">T20 WC 2024</span></div>
+                <div class="photo"><img src="4.jpeg" alt="Mountain View"><span class="caption">CT 25</span></div>
+                <div class="photo"><img src="5.jpeg" alt="Mountain View"><span class="caption">BAT BOWL</span></div>
+                <div class="photo"><img src="6.jpeg" alt="Mountain View"><span class="caption">LOVE</span></div>
+                <div class="photo"><img src="7.jpeg" alt="Mountain View"><span class="caption">GABBA 2021</span></div>
+                <div class="photo"><img src="8.jpeg" alt="Mountain View"><span class="caption">KUNG FU PANDYA</span></div>
+                <div class="photo"><img src="9.jpeg" alt="Mountain View"><span class="caption">LEATHER BALL</span></div>
+                <div class="photo"><img src="10.jpeg" alt="Mountain View"><span class="caption">CAPTAIN COOL</span></div>
+                <div class="photo"><img src="31.jpg" alt="Mountain View"><span class="caption">GOD</span></div>
+            </div>
+
+            <div class="dream">
+                <div class="photo"><img src="bcci.jpeg" alt="Mountain View"><span class="caption">BCCI</span></div>
+                <div class="photo"><img src="arsh.jpeg" alt="Mountain View" ><span class="caption">ARSHDEEP SINGH</span></div>
+                <div class="photo"><img src="11.jpeg" alt="Mountain View"><span class="caption">2016 ODI</span></div>
+                <div class="photo"><img src="12.jpeg" alt="Mountain View"><span class="caption">2013 CT</span></div>
+                <div class="photo"><img src="13.jpeg" alt="Mountain View"><span class="caption">KING</span></div>
+                <div class="photo"><img src="14.jpeg" alt="Mountain View"><span class="caption">2015 WC</span></div>
+                <div class="photo"><img src="15.jpeg" alt="Mountain View"><span class="caption">2024 WC</span></div>
+                <div class="photo"><img src="16.jpeg" alt="Mountain View"><span class="caption">MIYYA MAGIC</span></div>
+                <div class="photo"><img src="17.jpeg" alt="Mountain View"><span class="caption">QUEEN OF CRICKET</span></div>
+                <div class="photo"><img src="18.jpeg" alt="Mountain View"><span class="caption">POWER PAIR</span></div>
+                <div class="photo"><img src="19.jpeg" alt="Mountain View"><span class="caption">T20 WINNER</span></div>
+                <div class="photo"><img src="20.jpeg" alt="Mountain View"><span class="caption">CENTURY</span></div>
+                <div class="photo"><img src="32.jpeg" alt="Mountain View"><span class="caption">THE FINISHER</span></div>
+            </div>
+
+            <div class="dream">
+                <div class="photo"><img src="34.jpeg" alt="Mountain View"><span class="caption">LITTEL MASTER</span></div>
+                <div class="photo"><img src="31.jpeg" alt="Mountain View"><span class="caption">WALL OF ICT</span></div>
+                <div class="photo"><img src="21.jpeg" alt="Mountain View"><span class="caption">RECORD BREAKER</span></div>
+                <div class="photo"><img src="22.jpeg" alt="Mountain View"><span class="caption">PRIDE OF INIDA</span></div>
+                <div class="photo"><img src="15.jpeg" alt="Mountain View"><span class="caption">BOOM BOOM</span></div>
+                <div class="photo"><img src="24.jpeg" alt="Mountain View"><span class="caption">CT WINNER2</span></div>
+                <div class="photo"><img src="25.jpeg" alt="Mountain View"><span class="caption">RUNMACHINE</span></div>
+                <div class="photo"><img src="26.jpeg" alt="Mountain View"><span class="caption">Mountain View</span></div>
+                <div class="photo"><img src="27.jpeg" alt="Mountain View"><span class="caption">Mountain View</span></div>
+                <div class="photo"><img src="28.jpeg" alt="Mountain View"><span class="caption">Mountain View</span></div>
+                <div class="photo"><img src="29.jpeg" alt="Mountain View"><span class="caption">Mountain View</span></div>
+                <div class="photo"><img src="30.jpeg" alt="Mountain View"><span class="caption">Mountain View</span></div>
+                <div class="photo"><img src="33.jpg" alt="Mountain View"><span class="caption">Mountain View</span></div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <a href="#">More</a>
+        </div>                                              
+    </div>
+
+    <!-- JavaScript should be at the end so images exist before running -->
+    <script>
+    document.querySelectorAll('.box img').forEach(img => {
+        if (img.parentElement.classList.contains('photo')) return;
+        let wrapper = document.createElement('div');
+        wrapper.classList.add('photo');
+        img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+        let captionText = img.alt || img.src.split('/').pop().split('.')[0];
+        let caption = document.createElement('span');
+        caption.classList.add('caption');
+        caption.innerText = captionText;
+        wrapper.appendChild(caption);
+    });
+    </script>
+</body>
+</html>
